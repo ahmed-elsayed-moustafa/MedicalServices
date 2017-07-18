@@ -1,0 +1,21 @@
+{
+   "x-ray" :{
+    "price": 150.00
+  },
+  
+   "diagnosis" :{
+    "price": 60.00
+  },
+  
+   "bloodtest" :{
+    "price": 78.00
+  },
+  
+   "ecg" :{
+    "price": 200.40
+  },
+  
+   "vaccine": {
+    "price": 27.50
+  }
+}
