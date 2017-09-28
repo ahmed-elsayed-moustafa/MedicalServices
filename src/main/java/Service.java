@@ -1,4 +1,3 @@
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.HashMap;
@@ -7,30 +6,24 @@ import org.json.simple.parser.ParseException;
 
 public class Service {
 
-	private String service;
+	private Services service;
 	private int amount;
-	private HashMap<String, Double> services = JsonParser.serviceValues;
+	private HashMap<String, Double> services = JsonParser.fillMap();
 
-	public Service(String service, int amount) throws FileNotFoundException, IOException, ParseException {
-		if (service == null || service.length()==0 || amount <= 0) {
+	public Service(Services service, int amount) throws FileNotFoundException, IOException, ParseException {
+		if (service == null || amount <= 0) {
 			throw new IllegalArgumentException("not a valid argument passed");
 		}
-
-		if (services.size() == 0) {
-			new JsonParser(new File(Service.class.getClassLoader().getResource("services.json").getFile()));
-		}
-
-		this.service = service.replace(" ", "").toLowerCase().trim();
 		this.amount = amount;
 	}
 
 	public double getCost() {
 		double currentCost = 0.0;
 
-		if (services.containsKey(service)) {
-			double price = services.get(service);
+		if (services.containsKey(service.getname())) {
+			double price = services.get(service.getname());
 			currentCost += price;
-			double decideAmount = service.equals("vaccine") ? 15.00 : price;
+			double decideAmount = service.getname().equals("vaccine") ? 15.00 : price;
 			amount = (decideAmount == 15 ? amount : amount - 1);
 			for (int i = 0; i < amount; i++) {
 				currentCost += decideAmount;
@@ -40,7 +33,7 @@ public class Service {
 		return currentCost;
 	}
 
-	public String getService() {
+	public Services getService() {
 		return service;
 	}
 

@@ -10,7 +10,7 @@ public class ServiceTest {
 
 	@Test
 	public void testGetCostBT() throws FileNotFoundException, IOException, ParseException {
-		Service s = new Service("blood test", 2);
+		Service s = new Service(Services.bloodtest, 2);
 
 		assertEquals("bloodtest", s.getService());
 
@@ -20,7 +20,7 @@ public class ServiceTest {
 
 	@Test
 	public void testGetCostV() throws FileNotFoundException, IOException, ParseException {
-		Service s = new Service("vaccine", 2);
+		Service s = new Service(Services.vaccine, 2);
 
 		assertEquals("vaccine", s.getService());
 
@@ -30,7 +30,7 @@ public class ServiceTest {
 
 	@Test
 	public void testGetCostXR() throws FileNotFoundException, IOException, ParseException {
-		Service s = new Service("x-ray", 2);
+		Service s = new Service(Services.xray, 2);
 
 		assertSame("x-ray", s.getService());
 
@@ -40,7 +40,7 @@ public class ServiceTest {
 
 	@Test
 	public void testGetCostD() throws FileNotFoundException, IOException, ParseException {
-		Service s = new Service("Diagnosis", 2);
+		Service s = new Service(Services.diagnosis, 2);
 
 		assertEquals("diagnosis", s.getService());
 
@@ -50,7 +50,7 @@ public class ServiceTest {
 
 	@Test
 	public void testGetCostECG() throws FileNotFoundException, IOException, ParseException {
-		Service s = new Service("ECG", 2);
+		Service s = new Service(Services.ecg, 2);
 
 		assertEquals("ecg", s.getService());
 
@@ -60,12 +60,7 @@ public class ServiceTest {
 
 	@Test(expected = IllegalArgumentException.class)
 	public void serviceLessThanZero() throws FileNotFoundException, IOException, ParseException {
-		new Service("ECG", -1);
-	}
-
-	@Test(expected = IllegalArgumentException.class)
-	public void serviceLengthZero() throws FileNotFoundException, IOException, ParseException {
-		new Service("", -1);
+		new Service(Services.ecg, -1);
 	}
 
 	@Test(expected = IllegalArgumentException.class)
@@ -75,7 +70,7 @@ public class ServiceTest {
 
 	@Test(expected = IllegalArgumentException.class)
 	public void serviceVaccineLessThanExpected() throws FileNotFoundException, IOException, ParseException {
-		new Service("vaccine", 0);
+		new Service(Services.vaccine, 0);
 	}
 
 }

@@ -1,12 +1,10 @@
 
-public class Between6570 extends Patient{
+public class Between6570 extends Patient {
 
-	public Between6570() {
-		super();
-
+   
+	public Between6570(boolean medicalDiscount) {
+		super(medicalDiscount);
 		setDiscount(new Between6570Discount());
-
-		setMedicalDiscount(new NoMedicalDiscount());
 	}
 
 }

@@ -10,24 +10,32 @@ import org.json.simple.parser.ParseException;
 
 public class JsonParser {
 
-	protected static HashMap<String, Double> serviceValues = new HashMap<String, Double>();
-	private File directory;
-	
-	public JsonParser(File directory) throws FileNotFoundException, IOException, ParseException {
-		this.directory = directory;
-		parse();
+	static HashMap<String, Double> serviceValues = new HashMap<String, Double>();
+
+	public static HashMap fillMap() throws FileNotFoundException, IOException, ParseException {
+
+		if (serviceValues.isEmpty()) {
+			return serviceValues = parse(serviceValues);
+		}
+
+		return serviceValues;
 	}
 
-	private void parse() throws FileNotFoundException, IOException, ParseException {
-		
+	static File f = new File(Service.class.getClassLoader().getResource("services.json").getFile());
+
+	protected static HashMap parse(HashMap<String, Double> map)
+			throws FileNotFoundException, IOException, ParseException {
+
 		JSONParser jp = new JSONParser();
 
-		Object object = jp.parse(new FileReader(directory.getAbsolutePath()));
+		Object object = jp.parse(new FileReader(f.getAbsolutePath()));
 		JSONObject jso = (JSONObject) object;
 		for (Object s : jso.keySet()) {
-			JSONObject prices= (JSONObject) jso.get(s);
+			JSONObject prices = (JSONObject) jso.get(s);
 			Object price = (Double) prices.get("price");
-			serviceValues.put((String) s, (Double)price);
+			map.put((String) s, (Double) price);
 		}
+		return map;
 	}
+
 }

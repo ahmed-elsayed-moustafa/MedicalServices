@@ -1,12 +1,10 @@
 
 public class Child extends Patient{
 
-	public Child() {
-		super();
+	public Child(boolean medicalDiscount) {
+		super(medicalDiscount);
 		
 		setDiscount(new ChildDiscount());
-		
-		setMedicalDiscount(new NoMedicalDiscount());
 	}
 
 }

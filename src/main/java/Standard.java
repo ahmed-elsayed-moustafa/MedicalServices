@@ -1,12 +1,10 @@
 
 public class Standard extends Patient{
 
-	public Standard() {
-		super();
+	public Standard(boolean medicalDiscount) {
+		super(medicalDiscount);
 		
 		setDiscount(new StandardDiscount());
-
-		setMedicalDiscount(new NoMedicalDiscount());
 	}
 
 }
