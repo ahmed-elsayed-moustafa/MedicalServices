@@ -4,12 +4,12 @@ public class Patient {
 
 	protected Discount discount;
 
-    boolean medicalDiscount;
-    
-	Patient(boolean medicalDiscount){
+	boolean medicalDiscount;
+
+	Patient(boolean medicalDiscount) {
 		this.medicalDiscount = medicalDiscount;
 	}
-	
+
 	public double getDiscount() {
 		return discount.hasDiscount();
 	}
@@ -20,8 +20,8 @@ public class Patient {
 
 	void addService(Service service) {
 		double price = service.getCost();
-		if (service.getService().getname().equals("bloodtest")) {
-			if(medicalDiscount) totalcost += price - ((discount.hasDiscount() + 0.15 * price));
+		if (service.getService().getname().equals("bloodtest") && medicalDiscount) {
+			totalcost += price - ((discount.hasDiscount() + 0.15 * price));
 		} else {
 			totalcost += price - (discount.hasDiscount() * price);
 		}
