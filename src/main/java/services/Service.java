@@ -12,6 +12,7 @@ public class Service {
 		if (service == null || amount <= 0) {
 			throw new IllegalArgumentException("not a valid argument passed");
 		}
+		this.service = service;
 		this.amount = amount;
 	}
 
