@@ -1,3 +1,7 @@
+package patientpackage;
+
+import services.Service;
+
 public class Patient {
 
 	protected double totalcost = 0.0;
@@ -18,7 +22,7 @@ public class Patient {
 		this.discount = discount;
 	}
 
-	void addService(Service service) {
+	public void addService(Service service) {
 		double price = service.getCostForServiceAmount();
 		if (service.getService().getname().equals("bloodtest") && medicalDiscount) {
 			totalcost += price - ((discount.hasDiscount() + 0.15 * price));
@@ -28,7 +32,7 @@ public class Patient {
 
 	}
 
-	double getTotal() {
+	public double getTotal() {
 		totalcost = Math.round(totalcost * 100);
 		totalcost = totalcost / 100;
 		return totalcost;
