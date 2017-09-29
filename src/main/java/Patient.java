@@ -19,7 +19,7 @@ public class Patient {
 	}
 
 	void addService(Service service) {
-		double price = service.getCost();
+		double price = service.getCostForServiceAmount();
 		if (service.getService().getname().equals("bloodtest") && medicalDiscount) {
 			totalcost += price - ((discount.hasDiscount() + 0.15 * price));
 		} else {

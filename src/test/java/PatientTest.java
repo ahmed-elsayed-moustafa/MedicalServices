@@ -9,7 +9,7 @@ import org.junit.Test;
 public class PatientTest {
 
 	@Test
-	public void test6070Insurance() throws FileNotFoundException, IOException, ParseException {
+	public void test6070Insurance() throws Exception {
 		Patient p = new Between6570(true);
 		p.addService(new Service(Services.bloodtest, 1));
 		p.addService(new Service(Services.vaccine, 2));
@@ -28,7 +28,7 @@ public class PatientTest {
 	}
 
 	@Test
-	public void testOver70Insurance() throws FileNotFoundException, IOException, ParseException {
+	public void testOver70Insurance() throws Exception {
 		Patient p = new Over70(false);
 		p.addService(new Service(Services.bloodtest, 1));
 		p.addService(new Service(Services.vaccine, 2));
@@ -48,7 +48,7 @@ public class PatientTest {
 	}
 
 	@Test
-	public void testUnder5Insurance() throws FileNotFoundException, IOException, ParseException {
+	public void testUnder5Insurance() throws Exception {
 		Patient p = new Child(false);
 		p.addService(new Service(Services.bloodtest, 1));
 		p.addService(new Service(Services.vaccine, 2));
@@ -67,7 +67,7 @@ public class PatientTest {
 	}
 
 	@Test
-	public void testStandardInsurance() throws FileNotFoundException, IOException, ParseException {
+	public void testStandardInsurance() throws Exception {
 		Patient p = new Standard(false);
 		p.addService(new Service(Services.bloodtest, 1));
 		p.addService(new Service(Services.vaccine, 2));
@@ -86,7 +86,7 @@ public class PatientTest {
 	}
 
 	@Test
-	public void test6070NoInsurance() throws FileNotFoundException, IOException, ParseException {
+	public void test6070NoInsurance() throws Exception {
 		Patient p = new Between6570(false);
 		p.addService(new Service(Services.bloodtest, 1));
 		p.addService(new Service(Services.vaccine, 2));
@@ -105,7 +105,7 @@ public class PatientTest {
 	}
 
 	@Test
-	public void testOver70NoInsurance() throws FileNotFoundException, IOException, ParseException {
+	public void testOver70NoInsurance() throws Exception {
 		Patient p = new Over70(false);
 		p.addService(new Service(Services.bloodtest, 1));
 		p.addService(new Service(Services.vaccine, 2));
@@ -124,7 +124,7 @@ public class PatientTest {
 	}
 
 	@Test
-	public void testUnder5NoInsurance() throws FileNotFoundException, IOException, ParseException {
+	public void testUnder5NoInsurance() throws Exception {
 		Patient p = new Child(false);
 		p.addService(new Service(Services.bloodtest, 1));
 		p.addService(new Service(Services.vaccine, 2));
@@ -143,7 +143,7 @@ public class PatientTest {
 	}
 
 	@Test
-	public void testStandardNoInsurance() throws FileNotFoundException, IOException, ParseException {
+	public void testStandardNoInsurance() throws Exception {
 		Patient p = new Standard(false);
 		p.addService(new Service(Services.bloodtest, 1));
 		p.addService(new Service(Services.vaccine, 2));

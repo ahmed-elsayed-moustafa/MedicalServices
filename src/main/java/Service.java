@@ -10,14 +10,14 @@ public class Service {
 	private int amount;
 	private HashMap<String, Double> services = JsonParser.fillMap();
 
-	public Service(Services service, int amount) throws FileNotFoundException, IOException, ParseException {
+	public Service(Services service, int amount) throws Exception {
 		if (service == null || amount <= 0) {
 			throw new IllegalArgumentException("not a valid argument passed");
 		}
 		this.amount = amount;
 	}
 
-	public double getCost() {
+	public double getCostForServiceAmount() {
 		double currentCost = 0.0;
 
 		if (services.containsKey(service.getname())) {

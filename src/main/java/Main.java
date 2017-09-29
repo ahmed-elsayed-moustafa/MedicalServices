@@ -1,11 +1,6 @@
-import java.io.FileNotFoundException;
-import java.io.IOException;
-
-import org.json.simple.parser.ParseException;
-
 public class Main {
 
-	public static void main(String[] args) throws FileNotFoundException, IOException, ParseException {
+	public static void main(String[] args) throws Exception {
 
 		Patient p = new Child(false);
 
