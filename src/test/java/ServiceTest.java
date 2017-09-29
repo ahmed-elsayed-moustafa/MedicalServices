@@ -6,6 +6,9 @@ import java.io.IOException;
 import org.json.simple.parser.ParseException;
 import org.junit.Test;
 
+import services.Service;
+import services.Services;
+
 public class ServiceTest {
 
 	@Test

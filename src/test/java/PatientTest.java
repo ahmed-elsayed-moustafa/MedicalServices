@@ -6,6 +6,14 @@ import java.io.IOException;
 import org.json.simple.parser.ParseException;
 import org.junit.Test;
 
+import patientpackage.Between6570;
+import patientpackage.Child;
+import patientpackage.Over70;
+import patientpackage.Patient;
+import patientpackage.Standard;
+import services.Service;
+import services.Services;
+
 public class PatientTest {
 
 	@Test
