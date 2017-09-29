@@ -2,7 +2,7 @@ public class Patient {
 
 	protected double totalcost = 0.0;
 
-	protected Discount discount;
+	protected DiscountStratergy discount;
 
 	boolean medicalDiscount;
 
@@ -14,7 +14,7 @@ public class Patient {
 		return discount.hasDiscount();
 	}
 
-	public void setDiscount(Discount discount) {
+	public void setDiscount(DiscountStratergy discount) {
 		this.discount = discount;
 	}
 

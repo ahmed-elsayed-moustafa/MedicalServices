@@ -4,7 +4,7 @@ public class Standard extends Patient{
 	public Standard(boolean medicalDiscount) {
 		super(medicalDiscount);
 		
-		setDiscount(new StandardDiscount());
+		setDiscount(new StandardDiscountStratergy());
 	}
 
 }
