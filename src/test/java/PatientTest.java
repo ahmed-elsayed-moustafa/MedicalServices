@@ -25,9 +25,11 @@ public class PatientTest {
 		double price = p.getTotal();
 
 		/**
-		 * 1) Blood test= 78 * 0.75= 58.50: 2) 78-58.50= 19.50
+		 * 1) Blood test= 78 * 0.75= 58.50: 
+		 * 2) 78-58.50= 19.50
 		 * 
-		 * 1) Vaccine= (27.50+30)57.5*0.60=34.5 2) 57.50-34.5=23
+		 * 1) Vaccine= (27.50+30)57.5*0.60=34.5 
+		 * 2) 57.50-34.5=23
 		 * 
 		 * 19.50+23=42.5
 		 */
@@ -37,7 +39,7 @@ public class PatientTest {
 
 	@Test
 	public void testOver70Insurance() throws Exception {
-		Patient p = new Over70(false);
+		Patient p = new Over70(true);
 		p.addService(new Service(Services.bloodtest, 1));
 		p.addService(new Service(Services.vaccine, 2));
 
@@ -57,7 +59,7 @@ public class PatientTest {
 
 	@Test
 	public void testUnder5Insurance() throws Exception {
-		Patient p = new Child(false);
+		Patient p = new Child(true);
 		p.addService(new Service(Services.bloodtest, 1));
 		p.addService(new Service(Services.vaccine, 2));
 
@@ -76,14 +78,15 @@ public class PatientTest {
 
 	@Test
 	public void testStandardInsurance() throws Exception {
-		Patient p = new Standard(false);
+		Patient p = new Standard(true);
 		p.addService(new Service(Services.bloodtest, 1));
 		p.addService(new Service(Services.vaccine, 2));
-
+		
 		double price = p.getTotal();
 
 		/**
-		 * 1) Blood test= 78 * 0.15= 11.7 2) 78 - 11.7 = 66.3
+		 * 1) Blood test= 78 * 0.15= 11.7 
+		 * 2) 78 - 11.7 = 66.3
 		 * 
 		 * 1) Vaccine= (27.50+30) 57.5
 		 * 
