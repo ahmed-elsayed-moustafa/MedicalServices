@@ -2,12 +2,12 @@ package patientpackage;
 
 public interface DiscountStratergy {
 
-	double hasDiscount();
+	double discountValue();
 }
 
 class ChildDiscountStratergy implements DiscountStratergy {
 
-	public double hasDiscount() {
+	public double discountValue() {
 
 		return 0.4;
 	}
@@ -16,7 +16,7 @@ class ChildDiscountStratergy implements DiscountStratergy {
 
 class Over70DiscountStratergy implements DiscountStratergy {
 
-	public double hasDiscount() {
+	public double discountValue() {
 
 		return 0.9;
 	}
@@ -25,7 +25,7 @@ class Over70DiscountStratergy implements DiscountStratergy {
 
 class Between6570DiscountStratergy implements DiscountStratergy {
 
-	public double hasDiscount() {
+	public double discountValue() {
 
 		return 0.6;
 	}
@@ -34,7 +34,7 @@ class Between6570DiscountStratergy implements DiscountStratergy {
 
 class StandardDiscountStratergy implements DiscountStratergy {
 
-	public double hasDiscount() {
+	public double discountValue() {
 
 		return 0.0;
 	}

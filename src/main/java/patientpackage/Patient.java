@@ -15,7 +15,7 @@ public class Patient {
 	}
 
 	public double getDiscount() {
-		return discount.hasDiscount();
+		return discount.discountValue();
 	}
 
 	public void setDiscount(DiscountStratergy discount) {
@@ -25,9 +25,9 @@ public class Patient {
 	public void addService(Service service) {
 		double price = service.getCostForServiceAmount();
 		if (service.getService().getname().equals("bloodtest") && medicalDiscount) {
-			totalcost += price - ((discount.hasDiscount() + 0.15 * price));
+			totalcost += price - ((discount.discountValue() + 0.15 * price));
 		} else {
-			totalcost += price - (discount.hasDiscount() * price);
+			totalcost += price - (discount.discountValue() * price);
 		}
 
 	}
