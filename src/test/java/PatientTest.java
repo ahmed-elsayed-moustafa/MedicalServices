@@ -50,7 +50,7 @@ public class PatientTest {
 		 * 
 		 * 1) Vaccine= (27.50+30)57.5*0.90=51.75 2) 57.50-51.75.5=5.75
 		 * 
-		 * 0+5.75=42.5
+		 * 0+5.75=5.75
 		 */
 
 		assertEquals(5.75, price, 0);
@@ -160,7 +160,6 @@ public class PatientTest {
 		p.addService(new Service(Services.vaccine, 2));
 
 		double price = p.getTotal();
-
 		/**
 		 * 1) Blood test= 78 = 78 2) 78 - 11.7 = 66.3
 		 * 
