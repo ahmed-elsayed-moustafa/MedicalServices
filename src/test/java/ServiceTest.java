@@ -6,6 +6,7 @@ import java.io.IOException;
 import org.json.simple.parser.ParseException;
 import org.junit.Test;
 
+import services.MedicalServices;
 import services.Service;
 import services.Services;
 
@@ -13,9 +14,9 @@ public class ServiceTest {
 
 	@Test
 	public void testGetCostBT() throws Exception {
-		Service s = new Service(Services.bloodtest, 2);
+		Service s = new Service(MedicalServices.BLOODTEST, 2);
 
-		assertEquals("bloodtest", s.getService().getname());
+		assertEquals("bloodtest", s.getService().getName());
 
 		assertEquals(156.0, s.getCostForServiceAmount(), 0);
 
@@ -23,9 +24,9 @@ public class ServiceTest {
 
 	@Test
 	public void testGetCostV() throws Exception {
-		Service s = new Service(Services.vaccine, 2);
+		Service s = new Service(MedicalServices.VACCINE, 2);
 
-		assertEquals("vaccine", s.getService().getname());
+		assertEquals("vaccine", s.getService().getName());
 
 		assertEquals(57.5, s.getCostForServiceAmount(), 0);
 
@@ -33,9 +34,9 @@ public class ServiceTest {
 
 	@Test
 	public void testGetCostXR() throws Exception {
-		Service s = new Service(Services.xray, 2);
+		Service s = new Service(MedicalServices.XRAY, 2);
 
-		assertSame("x-ray", s.getService().getname());
+		assertSame("x-ray", s.getService().getName());
 
 		assertEquals(300.0, s.getCostForServiceAmount(), 0);
 
@@ -43,9 +44,9 @@ public class ServiceTest {
 
 	@Test
 	public void testGetCostD() throws Exception {
-		Service s = new Service(Services.diagnosis, 2);
+		Service s = new Service(MedicalServices.DIAGNOSIS, 2);
 
-		assertEquals("diagnosis", s.getService().getname());
+		assertEquals("diagnosis", s.getService().getName());
 
 		assertEquals(120.0, s.getCostForServiceAmount(), 0);
 
@@ -53,9 +54,9 @@ public class ServiceTest {
 
 	@Test
 	public void testGetCostECG() throws Exception {
-		Service s = new Service(Services.ecg, 2);
+		Service s = new Service(MedicalServices.ECG, 2);
 
-		assertEquals("ecg", s.getService().getname());
+		assertEquals("ecg", s.getService().getName());
 
 		assertEquals(400.8, s.getCostForServiceAmount(), 0);
 
@@ -63,7 +64,7 @@ public class ServiceTest {
 
 	@Test(expected = IllegalArgumentException.class)
 	public void serviceLessThanZero() throws Exception {
-		new Service(Services.ecg, -1);
+		new Service(MedicalServices.ECG, -1);
 	}
 
 	@Test(expected = IllegalArgumentException.class)
@@ -73,7 +74,7 @@ public class ServiceTest {
 
 	@Test(expected = IllegalArgumentException.class)
 	public void serviceVaccineLessThanExpected() throws Exception {
-		new Service(Services.vaccine, 0);
+		new Service(MedicalServices.VACCINE, 0);
 	}
 
 }

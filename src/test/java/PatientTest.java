@@ -11,6 +11,7 @@ import patientpackage.Child;
 import patientpackage.Over70;
 import patientpackage.Patient;
 import patientpackage.Standard;
+import services.MedicalServices;
 import services.Service;
 import services.Services;
 
@@ -19,8 +20,8 @@ public class PatientTest {
 	@Test
 	public void test6070Insurance() throws Exception {
 		Patient p = new Between6570(true);
-		p.addService(new Service(Services.bloodtest, 1));
-		p.addService(new Service(Services.vaccine, 2));
+		p.addService(new Service(MedicalServices.BLOODTEST, 1));
+		p.addService(new Service(MedicalServices.VACCINE, 2));
 
 		double price = p.getTotal();
 
@@ -40,8 +41,8 @@ public class PatientTest {
 	@Test
 	public void testOver70Insurance() throws Exception {
 		Patient p = new Over70(true);
-		p.addService(new Service(Services.bloodtest, 1));
-		p.addService(new Service(Services.vaccine, 2));
+		p.addService(new Service(MedicalServices.BLOODTEST, 1));
+		p.addService(new Service(MedicalServices.VACCINE, 2));
 
 		double price = p.getTotal();
 
@@ -60,8 +61,8 @@ public class PatientTest {
 	@Test
 	public void testUnder5Insurance() throws Exception {
 		Patient p = new Child(true);
-		p.addService(new Service(Services.bloodtest, 1));
-		p.addService(new Service(Services.vaccine, 2));
+		p.addService(new Service(MedicalServices.BLOODTEST, 1));
+		p.addService(new Service(MedicalServices.VACCINE, 2));
 
 		double price = p.getTotal();
 
@@ -79,8 +80,8 @@ public class PatientTest {
 	@Test
 	public void testStandardInsurance() throws Exception {
 		Patient p = new Standard(true);
-		p.addService(new Service(Services.bloodtest, 1));
-		p.addService(new Service(Services.vaccine, 2));
+		p.addService(new Service(MedicalServices.BLOODTEST, 1));
+		p.addService(new Service(MedicalServices.VACCINE, 2));
 		
 		double price = p.getTotal();
 
@@ -99,8 +100,8 @@ public class PatientTest {
 	@Test
 	public void test6070NoInsurance() throws Exception {
 		Patient p = new Between6570(false);
-		p.addService(new Service(Services.bloodtest, 1));
-		p.addService(new Service(Services.vaccine, 2));
+		p.addService(new Service(MedicalServices.BLOODTEST, 1));
+		p.addService(new Service(MedicalServices.VACCINE, 2));
 
 		double price = p.getTotal();
 
@@ -118,8 +119,8 @@ public class PatientTest {
 	@Test
 	public void testOver70NoInsurance() throws Exception {
 		Patient p = new Over70(false);
-		p.addService(new Service(Services.bloodtest, 1));
-		p.addService(new Service(Services.vaccine, 2));
+		p.addService(new Service(MedicalServices.BLOODTEST, 1));
+		p.addService(new Service(MedicalServices.VACCINE, 2));
 
 		double price = p.getTotal();
 		/**
@@ -137,8 +138,8 @@ public class PatientTest {
 	@Test
 	public void testUnder5NoInsurance() throws Exception {
 		Patient p = new Child(false);
-		p.addService(new Service(Services.bloodtest, 1));
-		p.addService(new Service(Services.vaccine, 2));
+		p.addService(new Service(MedicalServices.BLOODTEST, 1));
+		p.addService(new Service(MedicalServices.VACCINE, 2));
 
 		double price = p.getTotal();
 
@@ -156,8 +157,8 @@ public class PatientTest {
 	@Test
 	public void testStandardNoInsurance() throws Exception {
 		Patient p = new Standard(false);
-		p.addService(new Service(Services.bloodtest, 1));
-		p.addService(new Service(Services.vaccine, 2));
+		p.addService(new Service(MedicalServices.BLOODTEST, 1));
+		p.addService(new Service(MedicalServices.VACCINE, 2));
 
 		double price = p.getTotal();
 		/**

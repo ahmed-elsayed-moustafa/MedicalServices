@@ -4,11 +4,11 @@ import java.util.HashMap;
 
 public class Service {
 
-	private Services service;
+	private MedicalServices service;
 	private int amount;
 	private HashMap<String, Double> services = JsonParser.fillMap();
 
-	public Service(Services service, int amount) throws Exception {
+	public Service(MedicalServices service, int amount) throws Exception {
 		if (service == null || amount <= 0) {
 			throw new IllegalArgumentException("not a valid argument passed");
 		}
@@ -19,10 +19,10 @@ public class Service {
 	public double getCostForServiceAmount() {
 		double currentCost = 0.0;
 
-		if (services.containsKey(service.getname())) {
-			double price = services.get(service.getname());
+		if (services.containsKey(service.getName())) {
+			double price = services.get(service.getName());
 			currentCost += price;
-			double decideAmount = service.getname().equals("vaccine") ? 15.00 : price;
+			double decideAmount = service.getName().equals("vaccine") ? 15.00 : price;
 			amount = (decideAmount == 15 ? amount : amount - 1);
 			for (int i = 0; i < amount; i++) {
 				currentCost += decideAmount;
@@ -32,7 +32,7 @@ public class Service {
 		return currentCost;
 	}
 
-	public Services getService() {
+	public MedicalServices getService() {
 		return service;
 	}
 
