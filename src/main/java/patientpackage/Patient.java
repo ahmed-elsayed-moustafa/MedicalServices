@@ -36,7 +36,7 @@ public class Patient {
 
 	public double getTotal() {
 		totalcost = Math.round(totalcost * 100);
-		totalcost = totalcost / 100;
+		totalcost /= 100;
 		return totalcost;
 	}
 }
