@@ -1,14 +1,8 @@
 import static org.junit.Assert.*;
-
-import java.io.FileNotFoundException;
-import java.io.IOException;
-
-import org.json.simple.parser.ParseException;
 import org.junit.Test;
-
-import patientpackage.Between6570;
+import patientpackage.BetweenSixtyFiveSeventy;
 import patientpackage.Child;
-import patientpackage.Over70;
+import patientpackage.OverSeventy;
 import patientpackage.Patient;
 import patientpackage.Standard;
 import services.MedicalServices;
@@ -19,7 +13,7 @@ public class PatientTest {
 
 	@Test
 	public void test6070Insurance() throws Exception {
-		Patient p = new Between6570(true);
+		Patient p = new BetweenSixtyFiveSeventy(true);
 		p.addService(new Service(MedicalServices.BLOODTEST, 1));
 		p.addService(new Service(MedicalServices.VACCINE, 2));
 
@@ -40,7 +34,7 @@ public class PatientTest {
 
 	@Test
 	public void testOver70Insurance() throws Exception {
-		Patient p = new Over70(true);
+		Patient p = new OverSeventy(true);
 		p.addService(new Service(MedicalServices.BLOODTEST, 1));
 		p.addService(new Service(MedicalServices.VACCINE, 2));
 
@@ -99,7 +93,7 @@ public class PatientTest {
 
 	@Test
 	public void test6070NoInsurance() throws Exception {
-		Patient p = new Between6570(false);
+		Patient p = new BetweenSixtyFiveSeventy(false);
 		p.addService(new Service(MedicalServices.BLOODTEST, 1));
 		p.addService(new Service(MedicalServices.VACCINE, 2));
 
@@ -118,7 +112,7 @@ public class PatientTest {
 
 	@Test
 	public void testOver70NoInsurance() throws Exception {
-		Patient p = new Over70(false);
+		Patient p = new OverSeventy(false);
 		p.addService(new Service(MedicalServices.BLOODTEST, 1));
 		p.addService(new Service(MedicalServices.VACCINE, 2));
 
