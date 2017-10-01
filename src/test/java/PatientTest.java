@@ -5,7 +5,7 @@ import patientpackage.Child;
 import patientpackage.OverSeventy;
 import patientpackage.Patient;
 import patientpackage.Standard;
-import services.MedicalServices;
+import services.ServiceType ;
 import services.Service;
 
 
@@ -14,68 +14,68 @@ public class PatientTest {
 	@Test
 	public void test6070Insurance() throws Exception {
 		Patient p = new BetweenSixtyFiveSeventy(true);
-		p.addService(new Service(MedicalServices.BLOODTEST, 1));
-		p.addService(new Service(MedicalServices.VACCINE, 2));
+		p.addService(new Service(ServiceType .BLOODTEST, 1));
+		p.addService(new Service(ServiceType .VACCINE, 2));
 
 		double price = p.getTotal();
 
 		/**
-		 * 1) Blood test= 78 * 0.75= 58.50: 
-		 * 2) 78-58.50= 19.50
+		 * 1) Blood test= 78 * 0.75= 26.52
+		 * 
 		 * 
 		 * 1) Vaccine= (27.50+30)57.5*0.60=34.5 
 		 * 2) 57.50-34.5=23
 		 * 
-		 * 19.50+23=42.5
+		 * 26.52+23=49.52
 		 */
 
-		assertEquals(42.5, price, 0);
+		assertEquals(49.52, price, 0);
 	}
 
 	@Test
 	public void testOver70Insurance() throws Exception {
 		Patient p = new OverSeventy(true);
-		p.addService(new Service(MedicalServices.BLOODTEST, 1));
-		p.addService(new Service(MedicalServices.VACCINE, 2));
+		p.addService(new Service(ServiceType .BLOODTEST, 1));
+		p.addService(new Service(ServiceType .VACCINE, 2));
 
 		double price = p.getTotal();
 
 		/**
-		 * 1) Blood test= 78 * 1.05= 81.9 so cost is free. Over 100% discount
+		 * 1) Blood test= 6.63
 		 * 
 		 * 1) Vaccine= (27.50+30)57.5*0.90=51.75 2) 57.50-51.75.5=5.75
 		 * 
-		 * 0+5.75=5.75
+		 * 6.38 +5.75=12.38
 		 */
 
-		assertEquals(5.75, price, 0);
+		assertEquals(12.38, price, 0);
 
 	}
 
 	@Test
 	public void testUnder5Insurance() throws Exception {
 		Patient p = new Child(true);
-		p.addService(new Service(MedicalServices.BLOODTEST, 1));
-		p.addService(new Service(MedicalServices.VACCINE, 2));
+		p.addService(new Service(ServiceType .BLOODTEST, 1));
+		p.addService(new Service(ServiceType .VACCINE, 2));
 
 		double price = p.getTotal();
 
 		/**
-		 * 1) Blood test= 78 * 0.55= 42.9 2) 78-42.9=35.1
+		 * 1) Blood test= 78 * 0.55= 39.78
 		 * 
 		 * 1) Vaccine= (27.50+30)57.5*0.40=23 2) 57.50-23=34.5
 		 * 
-		 * 34.5+34.1=69.6
+		 * 34.5+39.78 = 74.28
 		 */
 
-		assertEquals(69.6, price, 0);
+		assertEquals(74.28, price, 0);
 	}
 
 	@Test
 	public void testStandardInsurance() throws Exception {
 		Patient p = new Standard(true);
-		p.addService(new Service(MedicalServices.BLOODTEST, 1));
-		p.addService(new Service(MedicalServices.VACCINE, 2));
+		p.addService(new Service(ServiceType .BLOODTEST, 1));
+		p.addService(new Service(ServiceType .VACCINE, 2));
 		
 		double price = p.getTotal();
 
@@ -94,8 +94,8 @@ public class PatientTest {
 	@Test
 	public void test6070NoInsurance() throws Exception {
 		Patient p = new BetweenSixtyFiveSeventy(false);
-		p.addService(new Service(MedicalServices.BLOODTEST, 1));
-		p.addService(new Service(MedicalServices.VACCINE, 2));
+		p.addService(new Service(ServiceType .BLOODTEST, 1));
+		p.addService(new Service(ServiceType .VACCINE, 2));
 
 		double price = p.getTotal();
 
@@ -113,8 +113,8 @@ public class PatientTest {
 	@Test
 	public void testOver70NoInsurance() throws Exception {
 		Patient p = new OverSeventy(false);
-		p.addService(new Service(MedicalServices.BLOODTEST, 1));
-		p.addService(new Service(MedicalServices.VACCINE, 2));
+		p.addService(new Service(ServiceType .BLOODTEST, 1));
+		p.addService(new Service(ServiceType .VACCINE, 2));
 
 		double price = p.getTotal();
 		/**
@@ -132,8 +132,8 @@ public class PatientTest {
 	@Test
 	public void testUnder5NoInsurance() throws Exception {
 		Patient p = new Child(false);
-		p.addService(new Service(MedicalServices.BLOODTEST, 1));
-		p.addService(new Service(MedicalServices.VACCINE, 2));
+		p.addService(new Service(ServiceType .BLOODTEST, 1));
+		p.addService(new Service(ServiceType .VACCINE, 2));
 
 		double price = p.getTotal();
 
@@ -151,8 +151,8 @@ public class PatientTest {
 	@Test
 	public void testStandardNoInsurance() throws Exception {
 		Patient p = new Standard(false);
-		p.addService(new Service(MedicalServices.BLOODTEST, 1));
-		p.addService(new Service(MedicalServices.VACCINE, 2));
+		p.addService(new Service(ServiceType .BLOODTEST, 1));
+		p.addService(new Service(ServiceType .VACCINE, 2));
 
 		double price = p.getTotal();
 		/**

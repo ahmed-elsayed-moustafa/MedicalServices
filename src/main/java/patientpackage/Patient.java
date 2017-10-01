@@ -1,9 +1,17 @@
 package patientpackage;
 
-import services.MedicalServices;
 import services.Service;
+import services.ServiceType;
 
 public class Patient {
+
+	static class MediHealthPatient {
+
+		public static double applyDiscount(double price, DiscountStrategy discount) {
+			double preMediHealth = discount.applyDiscount(price);
+			return preMediHealth * 0.85;
+		}
+	}
 
 	private double totalcost = 0.0;
 
@@ -21,11 +29,10 @@ public class Patient {
 
 	public void addService(Service service) {
 		double price = service.getCostForServiceAmount();
-		if (service.getService()==MedicalServices.BLOODTEST && medicalDiscount) {
-			double calculatedCost = (price - ((discount.discountValue() + 0.15) * price));
-			totalcost += calculatedCost < 0.0 ? 0.0 : calculatedCost;
+		if (service.getService() == ServiceType.BLOODTEST && medicalDiscount) {
+			totalcost += MediHealthPatient.applyDiscount(price, discount);
 		} else {
-			totalcost += price - (discount.discountValue() * price);
+			totalcost += discount.applyDiscount(price);
 		}
 
 	}
