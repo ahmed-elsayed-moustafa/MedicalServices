@@ -5,11 +5,11 @@ import services.Service;
 
 public class Patient {
 
-	protected double totalcost = 0.0;
+	private double totalcost = 0.0;
 
-	protected DiscountStratergy discount;
+	private DiscountStratergy discount;
 
-	boolean medicalDiscount;
+	private boolean medicalDiscount;
 
 	Patient(boolean medicalDiscount) {
 		this.medicalDiscount = medicalDiscount;
