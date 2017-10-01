@@ -8,9 +8,14 @@ abstract class DiscountStrategy {
 		this.discountAmount = discountAmount;
 	}
 
-	double applyDiscount(double price) {
-		return price * this.discountAmount;
+	double apply(double price, boolean isInsured) {
+		return this.applyDiscount(price, isInsured);
 	}
+
+	double applyDiscount(double price,  boolean isInsured) {
+	    double discountedPrice = price * this.discountAmount;
+	    return isInsured ? (discountedPrice * 0.85) : discountedPrice;
+	  }	
 }
 
 class ChildDiscountStrategy extends DiscountStrategy {
