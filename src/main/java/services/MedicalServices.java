@@ -8,7 +8,7 @@ public enum MedicalServices {
 	private MedicalServices(final double price) {
 		this.price = price;
 	}
-	
+
 	public double getPrice() {
 		return price;
 	}

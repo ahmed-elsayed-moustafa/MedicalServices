@@ -7,7 +7,7 @@ public class Patient {
 
 	private double totalcost = 0.0;
 
-	private DiscountStratergy discount;
+	private DiscountStrategy discount;
 
 	private boolean medicalDiscount;
 
@@ -15,7 +15,7 @@ public class Patient {
 		this.medicalDiscount = medicalDiscount;
 	}
 
-	public void setDiscount(DiscountStratergy discount) {
+	public void setDiscount(DiscountStrategy discount) {
 		this.discount = discount;
 	}
 

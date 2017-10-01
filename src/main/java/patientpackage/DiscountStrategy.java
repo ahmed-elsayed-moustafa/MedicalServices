@@ -1,11 +1,11 @@
 package patientpackage;
 
-public interface DiscountStratergy {
+public interface DiscountStrategy {
 
 	double discountValue();
 }
 
-class ChildDiscountStratergy implements DiscountStratergy {
+class ChildDiscountStrategy implements DiscountStrategy {
 
 	public double discountValue() {
 
@@ -14,7 +14,7 @@ class ChildDiscountStratergy implements DiscountStratergy {
 
 }
 
-class OverSeventyDiscountStratergy implements DiscountStratergy {
+class OverSeventyDiscountStrategy implements DiscountStrategy {
 
 	public double discountValue() {
 
@@ -23,7 +23,7 @@ class OverSeventyDiscountStratergy implements DiscountStratergy {
 
 }
 
-class BetweenSixtyFiveSeventyDiscountStratergy implements DiscountStratergy {
+class BetweenSixtyFiveSeventyDiscountStrategy implements DiscountStrategy {
 
 	public double discountValue() {
 
@@ -32,7 +32,7 @@ class BetweenSixtyFiveSeventyDiscountStratergy implements DiscountStratergy {
 
 }
 
-class StandardDiscountStratergy implements DiscountStratergy {
+class StandardDiscountStrategy implements DiscountStrategy {
 
 	public double discountValue() {
 

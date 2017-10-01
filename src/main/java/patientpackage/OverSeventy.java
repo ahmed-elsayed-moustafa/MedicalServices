@@ -6,7 +6,7 @@ public class OverSeventy extends Patient {
 
 		super(medicalDiscount);
 
-		setDiscount(new OverSeventyDiscountStratergy());
+		setDiscount(new OverSeventyDiscountStrategy());
 	}
 
 }
