@@ -2,8 +2,8 @@ package patientpackage;
 
 public class Child extends Patient {
 
-	public Child(boolean medicalDiscount) {
-		super(new ChildDiscountStrategy(medicalDiscount));
+	public Child(boolean isMediHealthInsured) {
+		super(new ChildDiscountStrategy(isMediHealthInsured));
 	}
 
 }

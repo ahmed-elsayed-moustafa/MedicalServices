@@ -2,8 +2,8 @@ package patientpackage;
 
 public class BetweenSixtyFiveSeventy extends Patient {
 
-	public BetweenSixtyFiveSeventy(boolean medicalDiscount) {
-		super(new BetweenSixtyFiveSeventyDiscountStrategy(medicalDiscount));
+	public BetweenSixtyFiveSeventy(boolean isMediHealthInsured) {
+		super(new BetweenSixtyFiveSeventyDiscountStrategy(isMediHealthInsured));
 	}
 
 }
