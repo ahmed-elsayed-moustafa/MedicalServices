@@ -14,7 +14,7 @@ class ChildDiscountStratergy implements DiscountStratergy {
 
 }
 
-class Over70DiscountStratergy implements DiscountStratergy {
+class OverSeventyDiscountStratergy implements DiscountStratergy {
 
 	public double discountValue() {
 
@@ -23,7 +23,7 @@ class Over70DiscountStratergy implements DiscountStratergy {
 
 }
 
-class Between6570DiscountStratergy implements DiscountStratergy {
+class BetweenSixtyFiveSeventyDiscountStratergy implements DiscountStratergy {
 
 	public double discountValue() {
 

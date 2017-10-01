@@ -13,7 +13,7 @@ import patientpackage.Patient;
 import patientpackage.Standard;
 import services.MedicalServices;
 import services.Service;
-import services.Services;
+
 
 public class PatientTest {
 

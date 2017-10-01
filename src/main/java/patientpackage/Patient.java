@@ -1,5 +1,6 @@
 package patientpackage;
 
+import services.MedicalServices;
 import services.Service;
 
 public class Patient {
@@ -14,17 +15,13 @@ public class Patient {
 		this.medicalDiscount = medicalDiscount;
 	}
 
-	public double getDiscount() {
-		return discount.discountValue();
-	}
-
 	public void setDiscount(DiscountStratergy discount) {
 		this.discount = discount;
 	}
 
 	public void addService(Service service) {
 		double price = service.getCostForServiceAmount();
-		if (service.getService().getName().equals("bloodtest") && medicalDiscount) {
+		if (service.getService()==MedicalServices.BLOODTEST && medicalDiscount) {
 			double calculatedCost = (price - ((discount.discountValue() + 0.15) * price));
 			totalcost += calculatedCost < 0.0 ? 0.0 : calculatedCost;
 		} else {

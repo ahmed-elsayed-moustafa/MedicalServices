@@ -1,8 +1,8 @@
 package patientpackage;
 
-public class Over70 extends Patient {
+public class OverSeventy extends Patient {
 
-	public Over70(boolean medicalDiscount) {
+	public OverSeventy(boolean medicalDiscount) {
 
 		super(medicalDiscount);
 
