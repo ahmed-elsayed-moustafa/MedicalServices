@@ -14,14 +14,12 @@ public class Service {
 	}
 
 	public double getCostForServiceAmount() {
-		double currentCost = 0.0;
-		currentCost += service.getPrice();
-		double decideAmount = service == MedicalServices.VACCINE ? 15.00 : service.getPrice();
+		double currentCost = service.getPrice();
+		double decideAmount = (service == MedicalServices.VACCINE) ? 15.00 : currentCost;
 		amount = (decideAmount == 15 ? amount : amount - 1);
 		for (int i = 0; i < amount; i++) {
 			currentCost += decideAmount;
 		}
-
 		return currentCost;
 	}
 
